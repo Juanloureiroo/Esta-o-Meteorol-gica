@@ -1,15 +1,19 @@
+int val;
+int tempPin = A0;
 
-const int LM35 = A0; 
-float temperatura; 
- 
-
-void setup() {
-Serial.begin(9600); 
+void setup()
+{
+  Serial.begin(9600);
 }
- 
-//Função que será executada continuamente
-void loop() {
-temperatura = (float(analogRead(LM35))*5/(1023))/0.01;
-Serial.println(temperatura);
-delay(2000);
+void loop()
+{
+  val = analogRead(tempPin);
+  float mv = ( val/1024.0)*5000;
+  float cel = mv/10;
+  float farh = (cel*9)/5 + 32;
+  Serial.print("TEMPRATURE = ");
+  Serial.print(farh);
+  Serial.print("*F");
+  Serial.println();
+  delay(2000);
 }
