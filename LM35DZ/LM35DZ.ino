@@ -11,9 +11,9 @@ void loop()
   float mv = ( val/1024.0)*5000;
   float cel = mv/10;
   float farh = (cel*9)/5 + 32;
-  Serial.print("TEMPRATURE = ");
-  Serial.print(farh);
-  Serial.print("*F");
-  Serial.println();
+//Serial.print("TEMPRATURE = ");
+  Serial.println(farh);
+  //Serial.print("*F");
+  //Serial.println();
   delay(2000);
 }
